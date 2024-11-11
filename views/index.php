@@ -30,7 +30,7 @@ require 'partials/nav.php';
             <form action="" method="POST">
                 <div class="mb-3">
                     <label for="courriel" class="form-label">Adresse courriel</label>
-                    <input type="email" class="form-control" id="courriel" name="courriel" value="">
+                    <input type="email" class="form-control" id="courriel" name="courriel" value="<?= $_COOKIE['userEmail'] ?? ''?>">
                     <span class="help-inline"></span>
                 </div>
                 <div class="mb-3">
@@ -42,11 +42,12 @@ require 'partials/nav.php';
                     <input type="checkbox" id="souvenir" name="souvenir" value="">
                     <label for="souvenir"> Se souvenir de moi</label>
                 </div>
+                 <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="Se connecter">
+                </div>
             </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Se connecter</button>
-            </div>
+           
         </div>
     </div>
 </div>

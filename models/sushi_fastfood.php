@@ -30,15 +30,21 @@ function getAllSushi(PDO $pdo)
     }
 }
 
-function getAllUsers(PDO $pdo){
-    $sql = 'select id,firstname,lastname,email,password from users;';
+function userGetByEmail(PDO $pdo, string $email) : array|false
+{
     try{
-        $stm = $pdo->prepare($sql);
-        $stm->execute();
-        return $stm -> fetchAll();
+        $stm = $pdo->prepare('SELECT id,firstname,lastname,email,password FROM users WHERE email=:email');
 
-    }catch(PDOException $e)
-    {
-        throw new PDOException($e->getMessage(),$e->getCode());
-    }
+        $stm->bindValue(":email", $email, PDO::PARAM_STR);
+        
+        $stm->execute();
+
+        return $stm->fetch(PDO::FETCH_ASSOC);
+        
+    } catch (PDOException $e) {
+
+        throw new PDOException($e->getMessage(), $e->getCode());
+        
+    }   
+
 }
