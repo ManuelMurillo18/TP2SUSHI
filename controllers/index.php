@@ -1,6 +1,5 @@
 <?php
 require 'src/database.php';
-require 'src/configuration.php';
 require 'models/sushi_fastfood.php';
 
 

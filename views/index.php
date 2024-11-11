@@ -15,9 +15,8 @@
                         foreach($sushi as $sush)
                         {
                                 
-                            if(++$count == 4)
-                                break;
-                            if($sush['idCategorie'] == 1)
+                            
+                            if($sush['idCategory'] == 1)
                             {
                               
                         ?>
@@ -43,10 +42,9 @@
                         foreach($sushi as $sush)
                         {
                             
-                            if(++$count == 4)
-                                break;
+                           
                             
-                            if($sush['idCategorie'] == 2)
+                            if($sush['idCategory'] == 2)
                                 {
                         ?>
                         
@@ -71,10 +69,9 @@
                         foreach($sushi as $sush)
                         {
                             
-                            if(++$count == 4)
-                                break;
                             
-                            if($sush['idCategorie'] == 3)
+                            
+                            if($sush['idCategory'] == 3)
                                 {
                         ?>
                         
@@ -99,10 +96,9 @@
                         foreach($sushi as $sush)
                         {
                            
-                            if(++$count == 4)
-                                break;
+                            
 
-                             if($sush['idCategorie'] == 4)
+                             if($sush['idCategory'] == 4)
                                 {
                             
                         ?>
@@ -127,9 +123,8 @@
                         $count = 0;
                         foreach($sushi as $sush)
                         { 
-                            if(++$count == 4)
-                                break;
-                            if($sush['idCategorie'] == 5)
+                           
+                            if($sush['idCategory'] == 5)
                                 {
                         ?>
                         
