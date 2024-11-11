@@ -1,6 +1,6 @@
 <?php
 
-const ROUTE = [
+const ROUTES = [
     '/' => 'index.php',
     #autre chemins
 ];
@@ -11,4 +11,4 @@ const DB_PARAMS = [
     PDO::ATTR_ORACLE_NULLS => PDO::NULL_EMPTY_STRING,        
 ];
 
-define('CONFIGURATIONS', parse_ini_file("configurations.ini", true));
+define('CONFIGURATIONS', parse_ini_file("configuration.ini", true));
