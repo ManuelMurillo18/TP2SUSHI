@@ -4,13 +4,13 @@ require 'partials/header.php';
 require 'partials/nav.php';
 
 ?>
-
 <main>
     <div class="tab-content">
         <?php 
         for ($i = 1; $i <= 5; $i++) {
+            $active = ($i == 1) ? 'active' : '';
         ?>
-            <div class="tab-pane active" id="tab<?= $i ?>" role="tabpanel">
+            <div class="tab-pane <?= $active ?>" id="tab<?= $i ?>" role="tabpanel">
                 <div class="row">
                     <?php displaySushiByCategory($i, $sushi); ?>
                 </div>
