@@ -153,7 +153,22 @@ require 'partials/nav.php';
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                ...
+            <form action="" method="POST">
+                <div class="mb-3">
+                    <label for="courriel" class="form-label">Adresse courriel</label>
+                    <input type="email" class="form-control" id="courriel" name="courriel" value="">
+                    <span class="help-inline"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="motDePasse" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="motDePasse" name="motDePasse" value="">
+                    <span class="help-inline"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="checkbox" id="souvenir" name="souvenir" value="">
+                    <label for="souvenir"> Se souvenir de moi</label>
+                </div>
+            </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Se connecter</button>
@@ -161,7 +176,6 @@ require 'partials/nav.php';
         </div>
     </div>
 </div>
-
 
 
 <?php require 'partials/footer.php'; ?>

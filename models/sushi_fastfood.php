@@ -29,3 +29,16 @@ function getAllSushi(PDO $pdo)
         throw new PDOException($e->getMessage(),$e->getCode());
     }
 }
+
+function getAllUsers(PDO $pdo){
+    $sql = 'select id,firstname,lastname,email,password from users;';
+    try{
+        $stm = $pdo->prepare($sql);
+        $stm->execute();
+        return $stm -> fetchAll();
+
+    }catch(PDOException $e)
+    {
+        throw new PDOException($e->getMessage(),$e->getCode());
+    }
+}

@@ -5,6 +5,7 @@ require 'models/sushi_fastfood.php';
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'],DB_PARAMS);
 $sushi = getAllSushi($pdo);
+$users = getAllUsers($pdo);
 
 
 require 'views/index.php';
