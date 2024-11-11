@@ -145,7 +145,7 @@ require 'partials/nav.php';
     </div>
 </main>
 
-<div class="modal fade" id="login-form-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="login-form-modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
