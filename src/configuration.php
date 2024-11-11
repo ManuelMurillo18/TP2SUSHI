@@ -2,7 +2,9 @@
 
 const ROUTES = [
     '/' => 'index.php',
-    #autre chemins
+    '/items-update' => 'items-update.php',
+    '/list-items' => 'list-items.php',
+    '/panier-achat' => 'panier-achat.php'
 ];
 
 const DB_PARAMS = [

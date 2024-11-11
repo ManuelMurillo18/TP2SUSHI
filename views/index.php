@@ -10,7 +10,7 @@ require 'partials/nav.php';
         for ($i = 1; $i <= 5; $i++) {
             $active = ($i == 1) ? 'active' : '';
         ?>
-            <div class="tab-pane <?= $active ?>" id="tab<?= $i ?>" role="tabpanel">
+            <div class="tab-pane <?=$active?>" id="tab<?=$i?>" role="tabpanel">
                 <div class="row">
                     <?php displayItemsByCategory($i, $sushi); ?>
                 </div>
