@@ -1,5 +1,10 @@
 <?php
 
+const ROUTE = [
+    '/' => 'index.php',
+    #autre chemins
+];
+
 const DB_PARAMS = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_CASE => PDO::CASE_NATURAL,
