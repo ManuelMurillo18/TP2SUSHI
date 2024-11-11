@@ -7,7 +7,13 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 {
     $filtre = $_GET['id'];
     $task;
-
+    foreach($sushi as $element)
+    {
+        if($element['idCategorie'] == $filtre)
+        {
+            $task.array_merge($element);
+        }
+    }
 
 }
 
