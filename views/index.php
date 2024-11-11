@@ -25,7 +25,7 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="img-thumbnail">
                                 <img src="public/uploads/<?=$sush['image'] ?>" class="img-fluid" alt="...">
-                                <div class="price"><?= $sush['prix']?></div>
+                                <div class="price"><?= $sush['price']?></div>
                                 <div class="caption">
                                     <h4><?= $sush['name']?></h4>
                                     <p><?= $sush['description'] ?></p>
@@ -53,7 +53,7 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="img-thumbnail">
                                 <img src="public/uploads/<?=$sush['image'] ?>" class="img-fluid" alt="...">
-                                <div class="price"><?= $sush['prix']?></div>
+                                <div class="price"><?= $sush['price']?></div>
                                 <div class="caption">
                                     <h4><?= $sush['name']?></h4>
                                     <p><?= $sush['description'] ?></p>
@@ -81,7 +81,7 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="img-thumbnail">
                                 <img src="public/uploads/<?=$sush['image'] ?>" class="img-fluid" alt="...">
-                                <div class="price"><?= $sush['prix']?></div>
+                                <div class="price"><?= $sush['price']?></div>
                                 <div class="caption">
                                     <h4><?= $sush['name']?></h4>
                                     <p><?= $sush['description'] ?></p>
@@ -110,7 +110,7 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="img-thumbnail">
                                 <img src="public/uploads/<?=$sush['image'] ?>" class="img-fluid" alt="...">
-                                <div class="price"><?= $sush['prix']?></div>
+                                <div class="price"><?= $sush['price']?></div>
                                 <div class="caption">
                                     <h4><?= $sush['name']?></h4>
                                     <p><?= $sush['description'] ?></p>
@@ -136,7 +136,7 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="img-thumbnail">
                                 <img src="public/uploads/<?=$sush['image'] ?>" class="img-fluid" alt="...">
-                                <div class="price"><?= $sush['prix']?></div>
+                                <div class="price"><?= $sush['price']?></div>
                                 <div class="caption">
                                     <h4><?= $sush['name']?></h4>
                                     <p><?= $sush['description'] ?></p>

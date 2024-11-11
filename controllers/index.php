@@ -1,7 +1,7 @@
 <?php
 require 'src/database.php';
 require 'src/configuration.php';
-require 'views/index.php';
+require 'models/sushi_fastfood.php';
 
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'],DB_PARAMS);

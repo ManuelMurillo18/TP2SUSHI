@@ -17,12 +17,12 @@ function sushiGetByCategorie(PDO $pdo, int $i)
 
 function getAllSushi(PDO $pdo) 
 {
-    $sql = 'select id,name,description,prix,image from items;';
+    $sql = 'select id,name,description,price,image from items;';
     try
     {
         $stm = $pdo->prepare($sql);
         $stm->execute();
-        return $stm -> fetch(PDO::FETCH_ASSOC);
+        return $stm -> fetchAll();
 
     }catch(PDOException $e)
     {
