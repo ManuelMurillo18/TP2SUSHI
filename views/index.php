@@ -12,7 +12,7 @@ require 'partials/nav.php';
         ?>
             <div class="tab-pane <?= $active ?>" id="tab<?= $i ?>" role="tabpanel">
                 <div class="row">
-                    <?php displaySushiByCategory($i, $sushi); ?>
+                    <?php displayItemsByCategory($i, $sushi); ?>
                 </div>
             </div>
         <?php } ?>

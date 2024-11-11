@@ -68,7 +68,7 @@ function isPost()
     return $_SERVER['REQUEST_METHOD'] === 'POST';
 }
 
-function displaySushiByCategory($categoryId, $sushi)
+function displayItemsByCategory($categoryId, $sushi)
 {
     foreach ($sushi as $sush) {
         if ($sush['idCategory'] == $categoryId) {
