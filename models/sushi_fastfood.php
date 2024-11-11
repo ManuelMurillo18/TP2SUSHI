@@ -15,13 +15,12 @@ function sushiGetByCategorie(PDO $pdo, int $i)
     }
 }
 
-function getIdCategorie(PDO $pdo, string $nom) 
+function getAllSushi(PDO $pdo) 
 {
-    $sql = 'select id from categories where name=:name;';
+    $sql = 'select id,name,description,prix,image from items;';
     try
     {
         $stm = $pdo->prepare($sql);
-        $stm -> bindValue('name',$nom,PDO::PARAM_STR);
         $stm->execute();
         return $stm -> fetch(PDO::FETCH_ASSOC);
 
