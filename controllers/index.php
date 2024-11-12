@@ -22,6 +22,7 @@ if(isPost())
 
         $_SESSION['user'] = [
             'id' => $user['id'],
+            'email' => $user['email']
             ];
 
         session_regenerate_id();
@@ -40,6 +41,6 @@ if(isPost())
    }
 
 }
-
-
-require 'views/index.php';
+else{
+    require 'views/index.php';
+}
