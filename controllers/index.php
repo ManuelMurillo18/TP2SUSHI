@@ -33,10 +33,10 @@ if(isPost())
             setcookie('userEmail',$userEmail,time()+ (90 * 24 * 60 * 60));
         }
         
-        redirect('/');
+        routeToController('/list-items');
 
     }
-    
+
    }
 
 }
