@@ -31,41 +31,6 @@ function getAllSushi(PDO $pdo)
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        
-
-
-
-
-
-
-
-
-
-
-
-
 function userGetByEmail(PDO $pdo, string $email) : array|false
 {
     try{
