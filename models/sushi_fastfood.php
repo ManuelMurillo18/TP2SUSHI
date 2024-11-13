@@ -66,7 +66,7 @@ function getAllSushi(PDO $pdo)
 
 
 
-hjgfghknhhhhhhfunction userGetByEmail(PDO $pdo, string $email) : array|false
+function userGetByEmail(PDO $pdo, string $email) : array|false
 {
     try{
         $stm = $pdo->prepare('SELECT id,firstname,lastname,email,password FROM users WHERE email=:email');
