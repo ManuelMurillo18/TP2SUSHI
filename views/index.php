@@ -43,6 +43,7 @@ require 'partials/nav.php';
                     <label for="souvenir"> Se souvenir de moi</label>
                 </div>
                  <div class="modal-footer">
+                <input type="hidden" name="message" value="Pour ne pas activé le post">
                 <input type="submit" class="btn btn-primary" value="Se connecter">
                 </div>
             </form>

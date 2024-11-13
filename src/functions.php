@@ -89,4 +89,5 @@ function displayItemsByCategory($categoryId, $sushi)
             <?php
         }
     }
+    
 }

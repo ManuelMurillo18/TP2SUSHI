@@ -3,16 +3,18 @@ require 'src/database.php';
 require 'models/sushi_fastfood.php';
 require 'src/session.php';
 
+$message = $_POST['message'] ?? '';
 $pdo = databaseGetPDO(CONFIGURATIONS['database'],DB_PARAMS);
 $sushi = getAllSushi($pdo);
 
 if(isPost())
 {
-   
+   if(empty($message));
+   {
    $userEmail = $_POST['courriel'];
    $userPassword = $_POST['motDePasse'];
    $user = userGetByEmail($pdo,$userEmail);
-
+   $erreur;
    if($user)
    {
 
@@ -34,13 +36,13 @@ if(isPost())
             setcookie('userEmail',$userEmail,time()+ (90 * 24 * 60 * 60));
         }
         
-        routeToController('/list-items');
-
+       routeToController('/list-items');
+    }
     }
 
    }
 
-}
+}   
 else{
     require 'views/index.php';
 }
