@@ -1,15 +1,16 @@
 <?php
 
-function sessionStart() : void {
+function sessionStart(): void
+{
 
     if (session_status() === PHP_SESSION_NONE) {
 
-        session_start();   
+        session_start();
     }
 
 }
 
-function sessionDestroy() : void
+function sessionDestroy(): void
 {
 
     $_SESSION = [];
@@ -17,16 +18,16 @@ function sessionDestroy() : void
 
     $name = session_name();
     $expire = new DateTime("-1 year");
-    $expireTimestamp =  $expire->getTimestamp();
+    $expireTimestamp = $expire->getTimestamp();
     $params = session_get_cookie_params();
 
     setcookie(
-        $name, 
-        "", 
-        $expireTimestamp, 
-        $params["path"], 
-        $params["domain"], 
-        $params["secure"], 
+        $name,
+        "",
+        $expireTimestamp,
+        $params["path"],
+        $params["domain"],
+        $params["secure"],
         $params["httponly"]
     );
 
