@@ -1,7 +1,6 @@
 <?php
 require 'partials/head.php';
 require 'partials/header.php';
-require 'partials/nav.php';
 
 ?>
 
@@ -31,7 +30,7 @@ require 'partials/nav.php';
         </li>
         <div class="cart-wrapper">
             <li class="nav-item">
-                <a class="nav-link nav-menu" href="#" title="Panier d'achat">
+                <a class="nav-link nav-menu" href="/panier-achat" title="Panier d'achat">
                     <i class="fa-solid fa-cart-shopping fa-lg"></i> <!-- Icone du panier -->
                     <div class="cart-counter" id="cart-counter">0</div> <!-- Compteur du panier -->
                 </a>
