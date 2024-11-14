@@ -1,7 +1,8 @@
 <?php
 require 'partials/head.php';
 require 'partials/header.php';
-
+require 'src/session.php';
+session_start();
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark">
@@ -18,8 +19,6 @@ require 'partials/header.php';
                     <a class="nav-link dropdown-toggle nav-account" href="#" id="navbarDropdown"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <?= $_SESSION['user']['email']; ?>
-                        <input type="hidden" value="<?php $_SESSION['user']['email']; ?>">
-                        <input type="hidden" name="message" value="">
 
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -86,11 +85,10 @@ require 'partials/header.php';
             </div>
             <div class="modal-body">
                 <a>Quitter le menu administration?</a>
-                <form action="" method="GET">
+                <form action="/" method="GET">
                     <div class="modal-footer">
-                        <input type="submit" name="ExitButton" class="btn btn-primary" value="Non"
-                            data-bs-dismiss="modal">
-                        <input type="submit" name="ExitButton" class="btn btn-primary" value="Oui">
+                        <input type="button" class="btn btn-primary" value="Non" data-bs-dismiss="modal">
+                        <input type="submit" class="btn btn-primary" value="Oui">
                     </div>
                 </form>
             </div>

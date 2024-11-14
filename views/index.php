@@ -65,8 +65,7 @@ require 'partials/header.php';
                 <form action="" method="POST">
                     <div class="mb-3">
                         <label for="courriel" class="form-label">Adresse courriel</label>
-                        <input type="email" class="form-control" id="courriel" name="courriel"
-                            value="<?= $_COOKIE['userEmail'] ?? '' ?>">
+                        <input type="email" class="form-control" id="courriel" name="courriel" value="<?= $_COOKIE['userEmail'] ?? '' ?>">
                         <span class="help-inline"></span>
                     </div>
                     <div class="mb-3">
@@ -79,7 +78,6 @@ require 'partials/header.php';
                         <label for="souvenir"> Se souvenir de moi</label>
                     </div>
                     <div class="modal-footer">
-                        <input type="hidden" name="message" value="Pour ne pas activé le post">
                         <input type="submit" class="btn btn-primary" value="Se connecter">
                     </div>
                 </form>

@@ -68,6 +68,11 @@ function isPost()
     return $_SERVER['REQUEST_METHOD'] === 'POST';
 }
 
+function isGet()
+{
+    return $_SERVER['REQUEST_METHOD'] === 'GET';
+}
+
 function displayItemsByCategory($categoryId, $sushi)
 {
     foreach ($sushi as $sush) {
