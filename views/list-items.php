@@ -33,7 +33,7 @@ session_start();
 </nav>
 
 <div class="row admin">
-    <h1><strong>Liste des items </strong><a href="#" class="btn btn-success btn-lg"><span class="bi-plus"></span>
+    <h1><strong>Liste des items </strong><a href="/panier-achat" class="btn btn-success btn-lg"><span class="bi-plus"></span>
             Ajouter</a></h1>
     <table class="table table-striped table-bordered">
         <thead>

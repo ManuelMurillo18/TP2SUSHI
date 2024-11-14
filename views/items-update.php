@@ -58,7 +58,7 @@ require 'partials/header.php';
             <div class="caption">
                 <h4>Maki de saumon</h4>
                 <p>Saumon, concombre contenu dans une feuille d&#039;algue.</p>
-                <a href="#" class="btn btn-order disabled add-to-cart" role="button"><span class="bi-cart-fill"></span>
+                <a href="/panier-achat" class="btn btn-order disabled add-to-cart" role="button"><span class="bi-cart-fill"></span>
                     Ajouter au panier</a>
             </div>
         </div>
