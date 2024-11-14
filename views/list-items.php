@@ -86,7 +86,7 @@ require 'partials/header.php';
             </div>
             <div class="modal-body">
                 <a>Quitter le menu administration?</a>
-                <form action="" method="POST">
+                <form action="" method="GET">
                     <div class="modal-footer">
                         <input type="submit" name="ExitButton" class="btn btn-primary" value="Non" data-bs-dismiss="modal">
                         <input type="submit" name="ExitButton" class="btn btn-primary" value="Oui">
