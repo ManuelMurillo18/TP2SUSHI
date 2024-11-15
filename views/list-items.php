@@ -2,7 +2,7 @@
 require 'partials/head.php';
 require 'partials/header.php';
 require 'src/session.php';
-session_start();
+sessionStart();
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark">
