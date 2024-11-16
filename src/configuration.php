@@ -4,7 +4,8 @@ const ROUTES = [
     '/' => 'index.php',
     '/items-update' => '/items-update.php',
     '/list-items' => '/list-items.php',
-    '/panier-achat' => '/panier-achat.php'
+    '/panier-achat' => '/panier-achat.php',
+    '/checkout' => '/checkout.php'
 ];
 
 const DB_PARAMS = [
