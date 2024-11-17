@@ -68,11 +68,6 @@ function isPost()
     return $_SERVER['REQUEST_METHOD'] === 'POST';
 }
 
-function isGet()
-{
-    return $_SERVER['REQUEST_METHOD'] === 'GET';
-}
-
 function displayItemsByCategory($categoryId, $sushi)
 {
     foreach ($sushi as $sush) {
@@ -85,14 +80,20 @@ function displayItemsByCategory($categoryId, $sushi)
                     <div class="caption">
                         <h4><?= $sush['name'] ?></h4>
                         <p><?= $sush['description'] ?></p>
-                        <a href="#" class="btn btn-order add-to-cart" role="button" onclick="incrementCounter(1)">
-                            <span class="bi-cart-fill"></span> Ajouter au panier
-                        </a>
+                        <form action="index.php" method="POST">
+                            <input type="hidden" name="id" value="<?= $sush['id'] ?>">
+                            <input type="hidden" name="name" value="<?= $sush['name'] ?>">
+                            <input type="hidden" name="price" value="<?= $sush['price'] ?>">
+                            <input type="hidden" name="image" value="<?= $sush['image'] ?>">
+                            <input type="hidden" name="description" value="<?= $sush['description'] ?>">
+                            <button type="submit" class="btn btn-order">
+                                <span class="bi-cart-fill"></span> Ajouter au panier
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
             <?php
         }
     }
-
 }
