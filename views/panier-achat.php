@@ -49,7 +49,7 @@ require 'partials/header.php';
                                     graines de sésame grillées.</p>
 
                                 <div class="d-inline-flex align-items-center">
-                                    <form class="item-quantity-selected">
+                                    <form class="item-quantity-selected" method="POST">
                                         <input type="hidden" class="item-id" name="idItem" value="1">
                                         <input type="hidden" class="item-unite-price" value="8.9">
                                         <div class="d-inline-flex align-items-center">
@@ -69,7 +69,7 @@ require 'partials/header.php';
                                             <input class="btn btn-outline-secondary" type="submit" value="MAJ" />
                                         </div>
                                     </form>
-                                    <form class="item-quantity-selected">
+                                    <form class="item-quantity-selected" method="POST">
                                         <input type="hidden" class="item-id" name="idItem" value="1">
                                         <input type="hidden" class="item-unite-price" value="8.9">
                                         <div class="d-inline-flex align-items-center">
