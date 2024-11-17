@@ -10,7 +10,6 @@ if (isPost()) {
     $userEmail = $_POST['courriel'];
     $userPassword = $_POST['motDePasse'];
     $user = userGetByEmail($pdo, $userEmail);
-    $erreur;
     if ($user) {
 
         if (password_verify($userPassword, $user['password'])) {
