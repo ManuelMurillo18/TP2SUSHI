@@ -31,9 +31,6 @@ require 'partials/header.php';
                 <div class="col-1">
                     <h6>Prix unitaire</h6>
                 </div>
-            </div>
-            <hr>
-            <div class="row">
                 <?php foreach ($_SESSION['cart'] as $id => $info): ?>
                     <?php $item = null;
                     foreach ($sushi as $sush) {
@@ -41,6 +38,9 @@ require 'partials/header.php';
                             $item = $sush;
                         }
                     } ?>
+            </div>
+            <hr>
+            <div class="row">
                     <div class="col-11">
                         <div class="row">
                             <div class="col-4"><img src="/public/uploads/<?= $item['image'] ?>" alt="Image de l'article"
@@ -61,7 +61,6 @@ require 'partials/header.php';
                                             </select>
                                             <input class="btn btn-outline-secondary" type="submit" name="MAJ" value="MAJ">
                                     </form>
-
                                     <form class="item-quantity-selected" method="POST">
                                         <input type="hidden" name="idItem" value="<?= $id ?>">
                                         <input class="btn btn-outline-secondary" type="submit" name="Supprimer"
