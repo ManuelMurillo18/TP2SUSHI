@@ -32,10 +32,10 @@ require 'partials/header.php';
                     <h6>Prix unitaire</h6>
                 </div>
                 <?php foreach ($_SESSION['cart'] as $id => $info): ?>
-                    <?php $item = null;
+                    <?php $value = null;
                     foreach ($sushi as $sush) {
                         if ($sush['id'] == $id) {
-                            $item = $sush;
+                            $value = $sush;
                         }
                     } ?>
             </div>
@@ -43,11 +43,11 @@ require 'partials/header.php';
             <div class="row">
                     <div class="col-11">
                         <div class="row">
-                            <div class="col-4"><img src="/public/uploads/<?= $item['image'] ?>" alt="Image de l'article"
+                            <div class="col-4"><img src="/public/uploads/<?= $value['image'] ?>" alt="Image de l'article"
                                     class="cart-detail-image"></div>
                             <div class="col-7 mt-4">
-                                <h4><?= $item['name'] ?></h4>
-                                <p><?= $item['description'] ?></p>
+                                <h4><?= $value['name'] ?></h4>
+                                <p><?= $value['description'] ?></p>
                                 <div class="d-inline-flex align-items-center">
                                     <form class="item-quantity-selected" method="POST">
                                         <input type="hidden" name="idItem" value="<?= $id ?>">
@@ -71,7 +71,7 @@ require 'partials/header.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-1 mt-4"><span><?= number_format($item['price'], 2) ?></span>$</div>
+                <div class="col-1 mt-4"><span><?= number_format($value['price'], 2) ?></span>$</div>
             <?php endforeach; ?>
         </div>
         <hr>

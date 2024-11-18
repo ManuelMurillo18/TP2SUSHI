@@ -8,6 +8,7 @@ sessionStart();
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 $sushi = getAllSushi($pdo);
 
+$_SESSION['cart'] ?? $_SESSION['cart'] = [];
 
 if (isPost()) {
     if (isset($_POST['id'], $_POST['quantite'])) {
