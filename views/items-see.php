@@ -6,7 +6,7 @@ require 'partials/header.php';
 
 <div class="row admin">
     <div class="col-md-6">
-        <h1><strong>Modifier un item</strong></h1>
+        <h1><strong>Voir un item</strong></h1>
         <br>
         <form class="form" role="form" method="POST">
             <input type="hidden" name="id" value="<?=$sushiselectionné['0']['id']?>">
