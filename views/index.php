@@ -32,7 +32,7 @@ require 'partials/header.php';
             <li class="nav-item">
                 <a class="nav-link nav-menu" href="/panier-achat" title="Panier d'achat">
                     <i class="fa-solid fa-cart-shopping fa-lg"></i> <!-- Icone du panier -->
-                    <div class="cart-counter" id="cart-counter"><?= isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?></div> <!-- Compteur du panier -->
+                    <div class="cart-counter" id="cart-counter"><?= $totalPanier; ?></div> <!-- Compteur du panier -->
                 </a>
             </li>
         </div>

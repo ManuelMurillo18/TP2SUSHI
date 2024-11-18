@@ -33,7 +33,7 @@ function routeToController(string $path): void
 
     if (!$validRouteController) {
 
-        require "views/page-not-found.php";
+        require "views/404.php";
 
     }
 
@@ -82,10 +82,6 @@ function displayItemsByCategory($categoryId, $sushi)
                         <p><?= $sush['description'] ?></p>
                         <form action="/" method="POST">
                             <input type="hidden" name="id" value="<?= $sush['id'] ?>">
-                            <input type="hidden" name="name" value="<?= $sush['name'] ?>">
-                            <input type="hidden" name="price" value="<?= $sush['price'] ?>">
-                            <input type="hidden" name="image" value="<?= $sush['image'] ?>">
-                            <input type="hidden" name="description" value="<?= $sush['description'] ?>">
                             <button type="submit" class="btn btn-order">
                                 <span class="bi-cart-fill"></span> Ajouter au panier
                             </button>
