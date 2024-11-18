@@ -18,4 +18,4 @@ if(isPost())
 $sushiCategorie = getNameAndIdCategories($pdo);
 $sushiselectionné = getSushiById($pdo,$id);
 
-require 'views/items-update.php';
+require 'views/items-delete.php';

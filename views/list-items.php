@@ -56,16 +56,16 @@ sessionStart();
                     <td><?= $sushi['price'] ?></td>
                     <td><?= $sushi['nameCategory'] ?></td>
                     <td width=340>
-                        <form style="display: inline;">
-                            <input type="hidden" name="id" value="4">
+                        <form style="display: inline;" method="POST">
+                            <input type="hidden" name="idvoir" value="<?=$sushi['id'] ?>">
                             <button type="submit" class="btn btn-secondary"><span class="bi-eye"></span> Voir</button>
                         </form>
-                        <form style="display: inline;">
-                            <input type="hidden" name="id" value="4">
+                        <form style="display: inline;" method="POST">
+                            <input type="hidden" name="idmodifier" value="<?=$sushi['id'] ?>">
                             <button type="submit" class="btn btn-primary"><span class="bi-pencil"></span> Modifier</button>
                         </form>
-                        <form style="display: inline;">
-                            <input type="hidden" name="id" value="4">
+                        <form style="display: inline;" method="POST">
+                            <input type="hidden" name="idsupprimer"value="<?=$sushi['id'] ?>">
                             <button type="submit" class="btn btn-danger"><span class="bi-x"></span> Supprimer</button>
                         </form>
                     </td>

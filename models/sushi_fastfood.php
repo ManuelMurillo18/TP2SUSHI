@@ -1,5 +1,17 @@
 <?php
-
+function getSushiById(PDO $pdo, $id)
+{
+    $sql = 'select id, name, description, price, image, idCategory from items where id=:id';
+    try{
+        $stm = $pdo->prepare($sql);
+        $stm->bindValue(":id",$id,PDO::PARAM_INT);
+        $stm->execute();
+        return $stm->fetchAll();
+    }
+    catch (PDOException $e) {
+        throw new PDOException($e->getMessage(), $e->getCode());
+    }
+}
 function sushiGetNameCategories(PDO $pdo)
 {
     $sql = 'select i.id, i.name, i.description, i.price,i.idCategory, c.name as nameCategory from items i inner join
@@ -44,4 +56,23 @@ function userGetByEmail(PDO $pdo, string $email): array|false
 
     }
 
+}
+
+function getNameAndIdCategories(PDO $pdo)
+{
+    $sql = 'Select id,name from categories';
+
+    try
+    {
+
+        $stm = $pdo->prepare($sql);
+        $stm->execute();
+        return $stm->fetchAll();
+
+    } 
+    catch (PDOException $e) {
+
+        throw new PDOException($e->getMessage(), $e->getCode());
+
+    }
 }
