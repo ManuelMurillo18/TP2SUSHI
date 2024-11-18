@@ -78,8 +78,8 @@ function displayItemsByCategory($categoryId, $sushi)
                     <img src="public/uploads/<?= $sush['image'] ?>" class="img-fluid" alt="...">
                     <div class="price"><?= $sush['price'] ?></div>
                     <div class="caption">
-                        <h4><?= $sush['name'] ?></h4>
-                        <p><?= $sush['description'] ?></p>
+                        <h4 class="site"><?= $sush['name'] ?></h4>
+                        <p class="site"><?= $sush['description'] ?></p>
                         <form action="/" method="POST">
                             <input type="hidden" name="id" value="<?= $sush['id'] ?>">
                             <button type="submit" class="btn btn-order">

@@ -4,7 +4,7 @@ require 'partials/header.php';
 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark site">
     <div class="container">
         <button id="nav-toggle-button" class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarsMain" aria-controls="navbarsExample04" aria-expanded="false"
