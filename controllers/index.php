@@ -3,13 +3,16 @@ require 'src/database.php';
 require 'models/sushi_fastfood.php';
 require 'src/session.php';
 
+sessionStart();
+
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 $sushi = getAllSushi($pdo);
 
+$_SESSION['cart'] = $_SESSION['cart'] ?? [];
+
 if (isPost() && isset($_POST['id'], $_POST['name'], $_POST['price'],$_POST['image'], $_POST['description'])) {
-    $_SESSION['cart'] = $_SESSION['cart'] ?? [];
     $_SESSION['cart'][] = $_POST;
-    redirect('/');
+    $_SESSION['message'] = 'Article ajouté avec succès!';
 }
 
 if (isPost() && isset($_POST['courriel'], $_POST['motDePasse'])) {

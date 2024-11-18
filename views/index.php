@@ -32,12 +32,19 @@ require 'partials/header.php';
             <li class="nav-item">
                 <a class="nav-link nav-menu" href="/panier-achat" title="Panier d'achat">
                     <i class="fa-solid fa-cart-shopping fa-lg"></i> <!-- Icone du panier -->
-                    <div class="cart-counter" id="cart-counter">0</div> <!-- Compteur du panier -->
+                    <div class="cart-counter" id="cart-counter"><?= isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?></div> <!-- Compteur du panier -->
                 </a>
             </li>
         </div>
     </ul>
 </nav>
+
+<?php if (isset($_SESSION['message'])): ?>
+    <div class="alert alert-success" role="alert">
+        <?= $_SESSION['message']; ?>
+    </div>
+    <?php unset($_SESSION['message']); ?>
+<?php endif; ?>
 
 <main>
     <div class="tab-content">

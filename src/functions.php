@@ -80,7 +80,7 @@ function displayItemsByCategory($categoryId, $sushi)
                     <div class="caption">
                         <h4><?= $sush['name'] ?></h4>
                         <p><?= $sush['description'] ?></p>
-                        <form action="index.php" method="POST">
+                        <form action="/" method="POST">
                             <input type="hidden" name="id" value="<?= $sush['id'] ?>">
                             <input type="hidden" name="name" value="<?= $sush['name'] ?>">
                             <input type="hidden" name="price" value="<?= $sush['price'] ?>">
