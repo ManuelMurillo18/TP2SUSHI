@@ -33,7 +33,7 @@ sessionStart();
 </nav>
 
 <div class="row admin">
-    <h1><strong>Liste des items </strong><a href="/panier-achat" class="btn btn-success btn-lg"><span class="bi-plus"></span>
+    <h1><strong>Liste des items </strong><a href="/list-items" class="btn btn-success btn-lg"><span class="bi-plus"></span>
             Ajouter</a></h1>
     <table class="table table-striped table-bordered">
         <thead>
@@ -53,7 +53,7 @@ sessionStart();
                 <tr>
                     <td><?= $sushi['name'] ?></td>
                     <td><?= $sushi['description'] ?></td>
-                    <td><?= $sushi['price'] ?></td>
+                    <td><?= number_format($sushi['price'], 2) ?>$</td>
                     <td><?= $sushi['nameCategory'] ?></td>
                     <td width=340>
                         <form style="display: inline;">
