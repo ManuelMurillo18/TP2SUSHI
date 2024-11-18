@@ -13,7 +13,7 @@ if (isPost()) {
     if (isset($_POST['id'], $_POST['quantite'])) {
         $idItem = $_POST['id'];
         $quantite = $_POST['quantite'];
-        $_SESSION['cart'][$idItem]['quantite'] = isset($_SESSION['cart'][$idItem]) 
+        $_SESSION['cart'][$idItem]['quantite'] = isset($_SESSION['cart'][$idItem])
             ? $_SESSION['cart'][$idItem]['quantite'] + $quantite : $quantite;
     }
 
