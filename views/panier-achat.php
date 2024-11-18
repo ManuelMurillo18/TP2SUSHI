@@ -11,10 +11,10 @@ require 'partials/header.php';
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarsMain">
-            <ul class="nav navbar-nav justify-content-end">
+            <ul class="container nav navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link nav-menu" href="/" title="Retour au menu"><i
-                            class="fa-solid fa-left-long fa-lg mr-1"></i>Retour au menu</a>
+                    <a class="nav-link nav-menu" href="/" title="Retour au menu"><span class="container mr-1"><i 
+                        class="fa-solid fa-left-long fa-lg mr-1"></i></span>Retour au menu</a>
                 </li>
             </ul>
         </div>
@@ -71,7 +71,7 @@ require 'partials/header.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-1 mt-4"><span><?= $item['price'] ?></span></div>
+                <div class="col-1 mt-4"><span><?= number_format($item['price'], 2) ?></span>$</div>
             <?php endforeach; ?>
         </div>
         <hr>
@@ -83,7 +83,7 @@ require 'partials/header.php';
         <hr>
         <input type="hidden" id="sub-total-amount" value="8.9">
         <h4>Sous-total (<span id="sub-total-items-count"><?= $totalQuantite ?></span> items): <strong><span
-                    id="sub-total-amount-formatted"><?= number_format($totalPrix, 2, '.', '') ?> $</span></strong></h4>
+                    id="sub-total-amount-formatted"><?= number_format($totalPrix, 2) ?>$</span></strong></h4>
         <a href="/checkout" class="btn cart-proceed-to-checkout">Passer à la caisse</a>
     </div>
 </div>
