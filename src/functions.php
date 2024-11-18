@@ -80,7 +80,7 @@ function displayItemsByCategory($categoryId, $sushi)
                     <div class="caption">
                         <h4 class="site"><?= $sush['name'] ?></h4>
                         <p class="site"><?= $sush['description'] ?></p>
-                        <form action="/" method="POST">
+                        <form method="POST">
                             <input type="hidden" name="id" value="<?= $sush['id'] ?>">
                             <button type="submit" class="btn btn-order">
                                 <span class="bi-cart-fill"></span> Ajouter au panier
