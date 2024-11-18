@@ -34,37 +34,46 @@ require 'partials/header.php';
             </div>
             <hr>
             <div class="row">
-                <div class="col-11">
-                    <div class="row">
-                        <div class="col-4"><img src="/public/uploads/uramaki_thon.jpg" alt="Image de l'article"
-                                class="cart-detail-image"></div>
-                        <div class="col-7 mt-4">
-                            <h4>Urumaki au thon</h4>
-                            <p>Thon et crème sure entourés d'une feuille d'algue et de riz vinaigré ainsi que de graines
-                                de sésame grillées.</p>
-                            <div class="d-inline-flex align-items-center">
-                                <form class="item-quantity-selected" method="POST">
-                                    <input type="hidden" name="idItem" value="1">
-                                    <input type="hidden" value="8.9">
-                                    <div class="d-inline-flex align-items-center">
-                                        <label class="mr-1" for="quantities">Quantité:</label>
-                                        <select class="form-select quantities">
-                                            <?php for ($i = 1; $i <= 10; $i++)
-                                                echo "<option value='$i'" . ($i === 1 ? " selected" : "") . ">$i</option>"; ?>
-                                        </select>
-                                        <input class="btn btn-outline-secondary" type="submit" name="MAJ" value="MAJ">
-                                </form>
-                                <form class="item-quantity-selected" method="POST">
-                                    <input type="hidden" name="idItem" value="<?= $id ?>">
-                                    <input type="hidden" value="8.9">
-                                    <input class="btn btn-outline-secondary" type="submit" name="Supprimer" value="Supprimer">
-                                </form>
+                <?php foreach ($_SESSION['cart'] as $id => $info): ?>
+                    <?php $item = null;
+                    foreach ($sushi as $sush) {
+                        if ($sush['id'] == $id) {
+                            $item = $sush;
+                        }
+                    } ?>
+                    <div class="col-11">
+                        <div class="row">
+                            <div class="col-4"><img src="/public/uploads/<?= $item['image'] ?>" alt="Image de l'article"
+                                    class="cart-detail-image"></div>
+                            <div class="col-7 mt-4">
+                                <h4><?= $item['name'] ?></h4>
+                                <p><?= $item['description'] ?></p>
+                                <div class="d-inline-flex align-items-center">
+                                    <form class="item-quantity-selected" method="POST">
+                                        <input type="hidden" name="idItem" value="<?= $id ?>">
+                                        <div class="d-inline-flex align-items-center">
+                                            <label class="mr-1" for="quantities">Quantité:</label>
+                                            <select class="form-select quantities" name="quantite">
+                                                <?php for ($i = 1; $i <= 10; $i++): ?>
+                                                    <option value="<?= $i ?>" <?= $i == $info['quantite'] ? 'selected' : '' ?>>
+                                                        <?= $i ?></option>
+                                                <?php endfor; ?>
+                                            </select>
+                                            <input class="btn btn-outline-secondary" type="submit" name="MAJ" value="MAJ">
+                                    </form>
+
+                                    <form class="item-quantity-selected" method="POST">
+                                        <input type="hidden" name="idItem" value="<?= $id ?>">
+                                        <input class="btn btn-outline-secondary" type="submit" name="Supprimer"
+                                            value="Supprimer">
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-1 mt-4"><span>8.90 $</span></div>
+                <div class="col-1 mt-4"><span><?= $item['price'] ?></span></div>
+            <?php endforeach; ?>
         </div>
         <hr>
     </div>
@@ -74,8 +83,8 @@ require 'partials/header.php';
         <h3>Résumé de la commande</h3>
         <hr>
         <input type="hidden" id="sub-total-amount" value="8.9">
-        <h4>Sous-total (<span id="sub-total-items-count">1</span> items): <strong><span
-                    id="sub-total-amount-formatted">8.90 $</span></strong></h4>
+        <h4>Sous-total (<span id="sub-total-items-count"><?= $totalQuantite ?></span> items): <strong><span
+                    id="sub-total-amount-formatted"><?= number_format($totalPrix, 2, '.', '') ?> $</span></strong></h4>
         <a href="/checkout" class="btn cart-proceed-to-checkout">Passer à la caisse</a>
     </div>
 </div>
