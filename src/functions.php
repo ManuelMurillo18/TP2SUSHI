@@ -76,7 +76,7 @@ function displayItemsByCategory($categoryId, $sushi)
             <div class="col-md-6 col-lg-4">
                 <div class="img-thumbnail">
                     <img src="public/uploads/<?= $sush['image'] ?>" class="img-fluid" alt="...">
-                    <div class="price"><?= $sush['price'] ?></div>
+                    <div class="price"><?= number_format($sush['price'], 2) ?>$</div>
                     <div class="caption">
                         <h4 class="site"><?= $sush['name'] ?></h4>
                         <p class="site"><?= $sush['description'] ?></p>
