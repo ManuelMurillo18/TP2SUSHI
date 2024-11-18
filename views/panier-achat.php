@@ -13,8 +13,8 @@ require 'partials/header.php';
         <div class="collapse navbar-collapse" id="navbarsMain">
             <ul class="container nav navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link nav-menu" href="/" title="Retour au menu"><span class="container mr-1"><i 
-                        class="fa-solid fa-left-long fa-lg mr-1"></i></span>Retour au menu</a>
+                    <a class="nav-link nav-menu" href="/" title="Retour au menu"><span class="container mr-1"><i
+                                class="fa-solid fa-left-long fa-lg mr-1"></i></span>Retour au menu</a>
                 </li>
             </ul>
         </div>
@@ -23,7 +23,7 @@ require 'partials/header.php';
 
 <div class="container-fluid row align-items-start">
     <div class="col-8"> <!-- Panier items -->
-        <div class="row admin">
+        <div class="container row admin">
             <div class="row align-items-end">
                 <div class="col-11">
                     <h1><strong>Panier d'achats</strong></h1>
@@ -31,6 +31,9 @@ require 'partials/header.php';
                 <div class="col-1">
                     <h6>Prix unitaire</h6>
                 </div>
+            </div>
+            <hr>
+            <div class="container">
                 <?php foreach ($_SESSION['cart'] as $id => $info): ?>
                     <?php $value = null;
                     foreach ($sushi as $sush) {
@@ -38,55 +41,61 @@ require 'partials/header.php';
                             $value = $sush;
                         }
                     } ?>
-            </div>
-            <hr>
-            <div class="row">
-                    <div class="col-11">
-                        <div class="row">
-                            <div class="col-4"><img src="/public/uploads/<?= $value['image'] ?>" alt="Image de l'article"
-                                    class="cart-detail-image"></div>
-                            <div class="col-7 mt-4">
-                                <h4><?= $value['name'] ?></h4>
-                                <p><?= $value['description'] ?></p>
-                                <div class="d-inline-flex align-items-center">
-                                    <form class="item-quantity-selected" method="POST">
-                                        <input type="hidden" name="idItem" value="<?= $id ?>">
-                                        <div class="d-inline-flex align-items-center">
-                                            <label class="mr-1" for="quantities">Quantité:</label>
-                                            <select class="form-select quantities" name="quantite">
-                                                <?php for ($i = 1; $i <= 10; $i++): ?>
-                                                    <option value="<?= $i ?>" <?= $i == $info['quantite'] ? 'selected' : '' ?>>
-                                                        <?= $i ?></option>
-                                                <?php endfor; ?>
-                                            </select>
-                                            <input class="btn btn-outline-secondary" type="submit" name="MAJ" value="MAJ">
-                                    </form>
-                                    <form class="item-quantity-selected" method="POST">
-                                        <input type="hidden" name="idItem" value="<?= $id ?>">
-                                        <input class="btn btn-outline-secondary" type="submit" name="Supprimer"
-                                            value="Supprimer">
-                                    </form>
+                    <div class="row">
+                        <div class="col-11">
+                            <div class="container row">
+                                <div class="col-4 cart-detail-image">
+                                    <img src="/public/uploads/<?= $value['image'] ?>" alt="Image de l'article"
+                                        class="cart-detail-image">
+                                </div>
+                                <div class="col-7 mt-4">
+                                    <h4><?= $value['name'] ?></h4>
+                                    <p><?= $value['description'] ?></p>
+                                    <div class="d-inline-flex align-items-center">
+                                        <form class="item-quantity-selected" method="POST">
+                                            <input type="hidden" name="idItem" value="<?= $id ?>">
+                                            <div class="d-inline-flex align-items-center">
+                                                <label class="mr-1" for="quantities">Quantité:</label>
+                                                <select class="form-select quantities" name="quantite">
+                                                    <?php for ($i = 1; $i <= 10; $i++): ?>
+                                                        <option value="<?= $i ?>" <?= $i == $info['quantite'] ? 'selected' : '' ?>>
+                                                            <?= $i ?>
+                                                        </option>
+                                                    <?php endfor; ?>
+                                                </select>
+                                                <input class="btn btn-outline-secondary" type="submit" name="MAJ"
+                                                    value="MAJ">
+                                            </div>
+                                        </form>
+                                        <form class="item-quantity-selected" method="POST">
+                                            <input type="hidden" name="idItem" value="<?= $id ?>">
+                                            <div class="d-inline-flex align-items-center">
+                                                <input class="btn btn-outline-secondary" type="submit" name="Supprimer"
+                                                    value="Supprimer">
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-1 mt-4"><span><?= number_format($value['price'], 2) ?></span>$</div>
                     </div>
-                </div>
-                <div class="col-1 mt-4"><span><?= number_format($value['price'], 2) ?></span>$</div>
-            <?php endforeach; ?>
+                    <hr>
+                <?php endforeach; ?>
+
+            </div>
         </div>
-        <hr>
     </div>
-</div>
-<div class="col-4"> <!-- Résumé commande -->
-    <div class="row admin">
-        <h3>Résumé de la commande</h3>
-        <hr>
-        <input type="hidden" id="sub-total-amount" value="8.9">
-        <h4>Sous-total (<span id="sub-total-items-count"><?= $totalQuantite ?></span> items): <strong><span
-                    id="sub-total-amount-formatted"><?= number_format($totalPrix, 2) ?>$</span></strong></h4>
-        <a href="/checkout" class="btn cart-proceed-to-checkout">Passer à la caisse</a>
+    <div class="col-4"> <!-- Résumé commande -->
+        <div class="row admin">
+            <h3>Résumé de la commande</h3>
+            <hr>
+            <input type="hidden" id="sub-total-amount" value="8.9">
+            <h4>Sous-total (<span id="sub-total-items-count"><?= $totalQuantite ?></span> items): <strong><span
+                        id="sub-total-amount-formatted"><?= number_format($totalPrix, 2) ?>$</span></strong></h4>
+            <a href="/checkout" class="btn cart-proceed-to-checkout">Passer à la caisse</a>
+        </div>
     </div>
-</div>
 </div>
 
 <?php require 'partials/footer.php'; ?>
