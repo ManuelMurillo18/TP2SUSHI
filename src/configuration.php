@@ -3,6 +3,8 @@
 const ROUTES = [
     '/' => 'index.php',
     '/items-update' => '/items-update.php',
+    '/items-see' => '/items-see.php',
+    '/items-delete' => '/items-delete.php',
     '/list-items' => '/list-items.php',
     '/panier-achat' => '/panier-achat.php',
     '/checkout' => '/checkout.php'

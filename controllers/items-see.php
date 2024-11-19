@@ -11,11 +11,18 @@ if(isGet())
 if(isPost())
 {
     $id = $_POST['id'];
-    $errors = [];
+   
 
 
 }
 $sushiCategorie = getNameAndIdCategories($pdo);
 $sushiselectionné = getSushiById($pdo,$id);
+
+foreach($sushiCategorie as $sushiCategory) {
+    $i = 0;
+    $i++;
+    if($sushiCategory['id'] == $sushiselectionné['0']['idCategory'])
+       $selected = $sushiCategory['name'];
+}
 
 require 'views/items-see.php';
