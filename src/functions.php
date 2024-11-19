@@ -97,3 +97,12 @@ function displayItemsByCategory($categoryId, $sushi)
         }
     }
 }
+
+function moveUploadedPicture(string $destinationPath = 'public/uploads/') 
+{      
+    if (! empty($_FILES['image']) && $_FILES['image']["error"] === UPLOAD_ERR_OK)
+    {         
+        move_uploaded_file($_FILES['image']['tmp_name'], $destinationPath . 
+        $_FILES['image']['name']);      
+    }  
+}

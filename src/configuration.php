@@ -2,6 +2,7 @@
 
 const ROUTES = [
     '/' => 'index.php',
+    '/items-add' => '/items-add.php',
     '/items-update' => '/items-update.php',
     '/items-see' => '/items-see.php',
     '/items-delete' => '/items-delete.php',

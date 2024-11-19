@@ -113,3 +113,23 @@ function modifyById(PDO $pdo,$id,$name,$description,$price,$idCategory)
 
     }
 }
+
+function addSushi(PDO $pdo,$name,$description,$price,$image,$idCategory)
+{
+    $sql = "Insert into Items(name,description,price,image,idCategory) values(:name,:description,:price,:image,:idcategory)";
+    try{
+
+        $stm = $pdo -> prepare($sql);
+        $stm -> bindValue(":name",$name,PDO::PARAM_STR);
+        $stm -> bindValue(":description",$description,PDO::PARAM_STR);
+        $stm -> bindValue(":price",$price,PDO::PARAM_STR);
+        $stm -> bindValue(":image",$image,PDO::PARAM_STR);
+        $stm -> bindValue(":idcategory",$idCategory,PDO::PARAM_INT);
+
+        $stm->execute();
+    }catch (PDOException $e) {
+
+        throw new PDOException($e->getMessage(), $e->getCode());
+
+    }
+}
