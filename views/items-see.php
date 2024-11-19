@@ -22,7 +22,7 @@ require 'partials/header.php';
             </div>
             <br>
             <div>
-                <label class="form-label" for="price">Prix: </label>
+                <label class="form-label" for="price">Prix:</label>
                 <p name="price"><?= number_format($sushiselectionné['0']['price'], 2)?>$</p>
             </div>
             <br>
