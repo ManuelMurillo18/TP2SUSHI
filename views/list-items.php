@@ -33,7 +33,8 @@ sessionStart();
 </nav>
 
 <div class="row admin">
-    <h1><strong>Liste des items </strong><a href="/list-items" class="btn btn-success btn-lg"><span class="bi-plus"></span>
+    <h1><strong>Liste des items </strong><a href="/list-items" class="btn btn-success btn-lg"><span
+                class="bi-plus"></span>
             Ajouter</a></h1>
     <table class="table table-striped table-bordered">
         <thead>
@@ -46,10 +47,7 @@ sessionStart();
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($sushis as $sushi) {
-
-
-                ?>
+            <?php foreach ($sushis as $sushi) { ?>
                 <tr>
                     <td><?= $sushi['name'] ?></td>
                     <td><?= $sushi['description'] ?></td>
@@ -57,15 +55,15 @@ sessionStart();
                     <td><?= $sushi['nameCategory'] ?></td>
                     <td width=340>
                         <form style="display: inline;" method="POST">
-                            <input type="hidden" name="idvoir" value="<?=$sushi['id'] ?>">
+                            <input type="hidden" name="idvoir" value="<?= $sushi['id'] ?>">
                             <button type="submit" class="btn btn-secondary"><span class="bi-eye"></span> Voir</button>
                         </form>
                         <form style="display: inline;" method="POST">
-                            <input type="hidden" name="idmodifier" value="<?=$sushi['id'] ?>">
+                            <input type="hidden" name="idmodifier" value="<?= $sushi['id'] ?>">
                             <button type="submit" class="btn btn-primary"><span class="bi-pencil"></span> Modifier</button>
                         </form>
                         <form style="display: inline;" method="POST">
-                            <input type="hidden" name="idsupprimer"value="<?=$sushi['id'] ?>">
+                            <input type="hidden" name="idsupprimer" value="<?= $sushi['id'] ?>">
                             <button type="submit" class="btn btn-danger"><span class="bi-x"></span> Supprimer</button>
                         </form>
                     </td>
