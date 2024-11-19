@@ -33,7 +33,7 @@ sessionStart();
 </nav>
 
 <div class="row admin">
-    <h1><strong>Liste des items </strong><a href="/list-items" class="btn btn-success btn-lg"><span class="bi-plus"></span>
+    <h1><strong>Liste des items </strong><a href="/items-add" class="btn btn-success btn-lg"><span class="bi-plus"></span>
             Ajouter</a></h1>
     <table class="table table-striped table-bordered">
         <thead>
