@@ -18,7 +18,6 @@ $totalPanier = isset($_SESSION['cart']) ? array_sum(array_column($_SESSION['cart
 if (isPost() && isset($_POST['courriel'], $_POST['motDePasse'])) {
     $user = userGetByEmail($pdo, $_POST['courriel']);
     if ($user && password_verify($_POST['motDePasse'], $user['password'])) {
-        sessionStart();
         $_SESSION['user'] = ['id' => $user['id'], 'email' => $user['email']];
         session_regenerate_id();
         if (isset($_POST['souvenir'])) {
@@ -26,6 +25,6 @@ if (isPost() && isset($_POST['courriel'], $_POST['motDePasse'])) {
         }
         redirect('/list-items');
     }
-}
+} 
 
 require 'views/index.php';
