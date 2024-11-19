@@ -84,7 +84,7 @@ sessionStart();
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <a>Quitter le menu administration?</a>
+                <h6 style="color: blue">Quitter la section 'administration' du site ?</h6>
                 <form action="/" method="GET">
                     <div class="modal-footer">
                         <input type="button" class="btn btn-primary" value="Non" data-bs-dismiss="modal">
