@@ -4,6 +4,7 @@ require 'models/sushi_fastfood.php';
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 $id;
+$confirm = "Êtes-vous certain de vouloir supprimer cet item ?";
 if(isGet())
 {
     $id = $_GET['id'];

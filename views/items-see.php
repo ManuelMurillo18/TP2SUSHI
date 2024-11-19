@@ -22,8 +22,8 @@ require 'partials/header.php';
             </div>
             <br>
             <div>
-                <label class="form-label" for="price">Prix: (en $)</label>
-                <p name="price"><?= $sushiselectionné['0']['price']?></p>
+                <label class="form-label" for="price">Prix:</label>
+                <p name="price"><?= number_format($sushiselectionné['0']['price'], 2)?>$</p>
             </div>
             <br>
             <div>
@@ -45,7 +45,7 @@ require 'partials/header.php';
     <div class="col-md-6 site">
         <div class="img-thumbnail">
             <img src=public/uploads/<?= $sushiselectionné['0']['image']?> alt="...">
-            <div class="price"><?= $sushiselectionné['0']['price']?></div>
+            <div class="price"><?= number_format($sushiselectionné['0']['price'], 2)?>$</div>
             <div class="caption">
                 <h4><?=$sushiselectionné['0']['name'] ?></h4>
                 <p><?=$sushiselectionné['0']['description'] ?></p>

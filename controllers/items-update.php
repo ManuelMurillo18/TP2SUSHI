@@ -25,11 +25,11 @@ if(isPost())
 
     $description = $_POST['description'] ?? '';
     if (empty($description)) {
-        $errors['description'] = "Veuillez écrire une description.";
+        $errors['description'] = "Veuillez inscrire une description.";
     }
     $prix = $_POST['price'] ?? '';
     if (empty($prix)) {
-        $errors['price'] = "Veuillez écrire un prix.";
+        $errors['price'] = "Veuillez inscrire un prix.";
     }
    
     if(empty($errors))

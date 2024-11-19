@@ -27,7 +27,7 @@ require 'partials/header.php';
             <div>
                 <label class="form-label" for="price">Prix: (en $)</label>
                 <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="Prix"
-                    value=<?= $sushiselectionné['0']['price']?>>
+                    value=<?= number_format($sushiselectionné['0']['price'], 2)?>>
                 <?= htmlHelperTag('span', $errors['price'] ?? '', ['class' => 'help-inline']) ?>
             </div>
             <br>
@@ -60,7 +60,7 @@ require 'partials/header.php';
     <div class="col-md-6 site">
         <div class="img-thumbnail">
             <img src=public/uploads/<?= $sushiselectionné['0']['image']?> alt="...">
-            <div class="price"><?= $sushiselectionné['0']['price']?></div>
+            <div class="price"><?= number_format($sushiselectionné['0']['price'], 2)?>$</div>
             <div class="caption">
                 <h4><?=$sushiselectionné['0']['name'] ?></h4>
                 <p><?=$sushiselectionné['0']['description'] ?></p>
