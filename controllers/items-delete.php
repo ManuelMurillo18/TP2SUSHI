@@ -1,6 +1,7 @@
 <?php
 require 'src/database.php';
 require 'models/sushi_fastfood.php';
+require 'src/session.php';
 
 $pdo = databaseGetPDO(CONFIGURATIONS['database'], DB_PARAMS);
 $id;
@@ -14,6 +15,8 @@ if(isPost())
     $id = $_POST['id'];
 
     deleteById($pdo,$id);
+    sessionStart();
+    unset($_SESSION['cart'][$_GET['id']]);
     
     redirect('/list-items');
 
