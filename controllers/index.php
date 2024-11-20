@@ -13,7 +13,7 @@ if (isPost() && isset($_POST['id'])) {
     $_SESSION['message'] = 'Article ajouté avec succès!';
 }
 
-$totalPanier = isset($_SESSION['cart']) ? array_sum(array_column($_SESSION['cart'], 'quantite')) : 0; //
+$totalPanier = isset($_SESSION['cart']) ? array_sum(array_column($_SESSION['cart'], 'quantite')) : 0;
 
 if (isPost() && isset($_POST['courriel'], $_POST['motDePasse'])) {
     $user = userGetByEmail($pdo, $_POST['courriel']);
